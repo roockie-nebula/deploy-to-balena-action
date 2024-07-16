@@ -134,7 +134,7 @@ export async function run(
 
 	// Finally send source to builders
 	try {
-		releaseId = await balena.push(inputs.fleet, inputs.source, inputs.cache, {
+		releaseId = await balena.push(inputs.fleet, inputs.source, inputs.cache, inputs.tag, {
 			...buildOptions,
 			noCache: inputs.layerCache === false,
 			multiDockerignore: inputs.multiDockerignore,

@@ -50,6 +50,7 @@ export async function push(
 	fleet: string,
 	source: string,
 	useCache: boolean,
+	tag: string,
 	options: Partial<BuildOptions>,
 ): Promise<Release['id']> {
 	if (process.env.GITHUB_ACTIONS === 'false') {
@@ -88,6 +89,8 @@ export async function push(
 		fleet,
 		'--source',
 		source,
+		'--release',
+		tag,
 		'--release-tag',
 		...Object.entries(buildOpt.tags).flatMap(([key, value]) => [
 			TagKeyMap[key as keyof typeof TagKeyMap],

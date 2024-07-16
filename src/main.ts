@@ -17,6 +17,7 @@ const inputs: Inputs = {
 	fleet: core.getInput('fleet', { required: true }),
 	environment: core.getInput('environment', { required: false }),
 	cache: core.getBooleanInput('cache', { required: false }),
+	tag: core.getInput('tag', { required: false }),
 	versionbot: core.getBooleanInput('versionbot', { required: false }),
 	createTag:
 		core.getBooleanInput('create_tag', { required: false }) ||
